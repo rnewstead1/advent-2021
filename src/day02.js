@@ -12,6 +12,11 @@ const commandKeyWithAim = {
   up: ([x, y, a], val) => [x, y, a - val],
 };
 
+const applyCommands = (instructions, commandKey, position) => {
+  const [x, y] = instructions.reduce((position, [command, val]) => commandKey[command](position, val), position);
+  return x * y;
+}
+
 module.exports = async (datafile) => {
   const lines = await getLines(datafile);
   const instructions = lines
@@ -19,15 +24,7 @@ module.exports = async (datafile) => {
     .map(([command, val]) => [command, parseInt(val)]);
 
   return {
-    positionSimple: () => {
-      const [x, y] = instructions
-        .reduce((position, [command, val]) => commandKeySimple[command](position, val), [0, 0]);
-      return x * y;
-    },
-    positionWithAim: () => {
-      const [x, y] = instructions
-        .reduce((position, [command, val]) => commandKeyWithAim[command](position, val), [0, 0, 0]);
-      return x * y;
-    },
+    positionSimple: () => applyCommands(instructions, commandKeySimple, [0, 0]),
+    positionWithAim: () => applyCommands(instructions, commandKeyWithAim, [0,0,0]),
   }
 }
