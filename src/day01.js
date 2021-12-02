@@ -6,13 +6,12 @@ const getLines = (filename) =>
 
 const numericArray = (length) => [...Array(length).keys()];
 
-const increaseCount = (list) => {
-  const listOffsetByOne = list.slice(1, list.length)
+const zip = (lists) => numericArray(lists[0].length)
+    .map(i => lists.map(list => list[i]));
 
-  return numericArray(listOffsetByOne.length)
-    .map(i => list[i] < listOffsetByOne[i])
-    .filter(Boolean).length;
-}
+const increaseCount = (list) => zip([list, list.slice(1, list.length)])
+  .map(([first, second]) => first < second)
+  .filter(Boolean).length;
 
 module.exports = async (datafile) => {
   const lines = await getLines(datafile);
@@ -20,15 +19,13 @@ module.exports = async (datafile) => {
 
   const singleIncreaseCount = () => increaseCount(depths);
 
-  const trebleIncreaseCount = () => {
-    const listFromStart = depths.slice(0, depths.length - 2);
-    const listFromNext = depths.slice(1, depths.length - 1);
-    const listFromNextNext = depths.slice(2, depths.length);
-    const differences = numericArray(listFromStart.length)
-      .map(i => listFromStart[i] + listFromNext[i] + listFromNextNext[i])
-
-    return increaseCount(differences);
-  }
+  const trebleIncreaseCount = () => increaseCount(
+    zip([
+      depths.slice(0, depths.length - 2),
+      depths.slice(1, depths.length - 1),
+      depths.slice(2, depths.length)
+    ]).map(([first, second, third]) => first + second + third)
+  );
 
   return {
     singleIncreaseCount,
