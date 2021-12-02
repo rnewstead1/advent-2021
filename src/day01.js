@@ -1,8 +1,4 @@
-const { readFile } = require('fs').promises
-
-const getLines = (filename) =>
-  readFile(filename, { encoding: 'utf8' })
-    .then((contents) => contents.toString().trim().split('\n'));
+const { getLines } = require('./file-helper');
 
 const numericArray = (length) => [...Array(length).keys()];
 

@@ -15,7 +15,7 @@ describe('day 1', () => {
     expect(day1.singleIncreaseCount()).to.equal(7);
   })
 
-  it('should return 5 treble increases', function () {
+  it('should return 5 treble increases', () => {
     expect(day1.trebleIncreaseCount()).to.equal(5);
   });
 })
