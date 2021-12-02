@@ -11,8 +11,12 @@ describe('day 2', () => {
     day2 = await initDay2(DATA_FILE);
   });
 
-  it('should give a position of 150', () => {
-    expect(day2.position()).to.equal(150);
+  it('should give a position of 150 for simple instruction key', () => {
+    expect(day2.positionSimple()).to.equal(150);
+  });
+
+  it('should give a position of 900 for instruction key with aim', () => {
+    expect(day2.positionWithAim()).to.equal(900);
   });
 
 })
