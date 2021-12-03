@@ -1,6 +1,4 @@
-const { getLines } = require('./file-helper');
-
-const numericArray = (length) => [...Array(length).keys()];
+const { getLines, numericArray } = require('./helpers');
 
 const asDecimal = (gammaRate) => parseInt(gammaRate.join(''), 2);
 

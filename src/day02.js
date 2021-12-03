@@ -1,4 +1,4 @@
-const { getLines } = require('./file-helper');
+const { getLines } = require('./helpers');
 
 const commandKeySimple = {
   forward: ([x, y], val) => [x + val, y],

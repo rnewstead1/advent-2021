@@ -1,6 +1,4 @@
-const { getLines } = require('./file-helper');
-
-const numericArray = (length) => [...Array(length).keys()];
+const { getLines, numericArray } = require('./helpers');
 
 const zip = (lists) => numericArray(lists[0].length)
     .map(i => lists.map(list => list[i]));
