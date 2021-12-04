@@ -11,7 +11,11 @@ describe('day 4', () => {
     day4 = await initDay4(DATA_FILE);
   });
 
-  it('should return final score of 4512', () => {
-    expect(day4.finalScore()).to.equal(4512);
+  it('should return final score of first board to win of 4512', () => {
+    expect(day4.firstToWinFinalScore()).to.equal(4512);
+  });
+
+  it('should return final score of last board to win of 1924', () => {
+    expect(day4.lastToWinFinalScore()).to.equal(1924);
   });
 })
