@@ -11,7 +11,11 @@ describe('day 5', () => {
     day5 = await initDay5(DATA_FILE);
   });
 
-  it('should return 5 points of at least two overlapping lines', () => {
-    expect(day5.atLeastTwoOverlappingLines()).to.equal(5);
+  it('should return 5 points of at least two overlapping horizontal and vertical lines', () => {
+    expect(day5.overlappingHorizontalAndVerticalLines()).to.equal(5);
+  });
+
+  it('should return 12 points of at least two overlapping horizontal, vertical and diagonal lines', () => {
+    expect(day5.overlappingAnyDirection()).to.equal(12);
   });
 })
