@@ -11,7 +11,11 @@ describe('day 7', () => {
     day7 = await initDay7(DATA_FILE);
   });
 
-  it('should return fuel spent of 37', () => {
-    expect(day7.fuelSpent()).to.equal(37);
+  it('should return linear fuel spent of 37', () => {
+    expect(day7.fuelSpentLinear()).to.equal(37);
+  });
+
+  it('should return variable fuel spent of 168', () => {
+    expect(day7.fuelSpentVariable()).to.equal(168);
   });
 })
