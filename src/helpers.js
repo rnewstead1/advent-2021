@@ -5,3 +5,5 @@ module.exports.getLines = (filename) =>
     .then((contents) => contents.toString().trim().split('\n'));
 
 module.exports.numericArray = (length) => [...Array(length).keys()];
+
+module.exports.sumArray = (arr) => arr.reduce((acc, curr) => acc + curr, 0);
