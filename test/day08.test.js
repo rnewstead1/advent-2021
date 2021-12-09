@@ -2,7 +2,7 @@ const { expect } = require('chai');
 
 const initDay8 = require('../src/day08')
 
-const DATA_FILE = __dirname + '/my_input/day08.txt';
+const DATA_FILE = __dirname + '/data/day08.txt';
 
 describe('day 8', () => {
   let day8;
