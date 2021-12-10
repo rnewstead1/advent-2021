@@ -14,4 +14,8 @@ describe('day 9', () => {
   it('should return a low point sum of 15', () => {
     expect(day9.lowPointSum()).to.equal(15);
   });
+
+  it('should return 1134 when multiplying the size of the three largest basins', () => {
+    expect(day9.largestBasins()).to.equal(1134);
+  });
 })
