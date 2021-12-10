@@ -14,4 +14,8 @@ describe('day 10', () => {
   it('should return a syntax error score of 26397', () => {
     expect(day10.syntaxErrorScore()).to.equal(26397);
   });
+
+  it('should return a completion string middle score of 288957', () => {
+    expect(day10.completionStringMiddleScore()).to.equal(288957);
+  });
 })
