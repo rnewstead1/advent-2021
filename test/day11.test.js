@@ -22,4 +22,8 @@ describe('day 11', () => {
   it('should return 1656 flashes after 100 steps', () => {
     expect(day11.flashCount(100)).to.equal(1656);
   });
+
+  it('should return 195 as the first simultaneous flash step', () => {
+    expect(day11.simultaneousFlashStep()).to.equal(195);
+  });
 })
